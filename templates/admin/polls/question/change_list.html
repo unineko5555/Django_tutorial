@@ -1,0 +1,10 @@
+{% extends "admin/change_list.html" %}
+
+<!-- 問2:adminのテンプレートchange_list.htmlで一覧画面から作成したページに遷移、URLの変更に対応するためにurlタグを使用 -->
+{% block content_subtitle %}
+    <!-- admin/polls/questionページでのみ表示されるようにする　-->
+    {% if request.resolver_match.url_name == 'polls_question_changelist' %}
+        <a href="{% url 'admin:polls_question_new_page' %}">New Pageに移動</a>
+        {{ block.super }}
+    {% endif %}
+{% endblock %}

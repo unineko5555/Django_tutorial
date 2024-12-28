@@ -1,0 +1,8 @@
+<!-- モデルの個々のレコードを編集するためのフォームが表示されるページのテンプレートを使う -->
+{% extends "admin/change_form.html" %}
+
+<!-- 問1:モデルのオプションにアクセスするためにopts.verbose_nameを使う。これはモデルの名前を動的に取得してテンプレート内で使用できる。 -->
+{% block content_title %}
+  <h1>{{ opts.verbose_name }}を編集</h1>
+{% endblock %}
+
